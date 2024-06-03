@@ -28,7 +28,7 @@ const Signup = () => {
         console.log('Form Data:', formData);
 
         try{
-            const res = await fetch('http://localhost:8080/user/signup' , { // Added proxy in the vite.config.js to get the exact url
+            const res = await fetch('https://movie-library-backend2.onrender.com/user/signup' , { // Added proxy in the vite.config.js to get the exact url
               method : 'POST' ,
               headers : {'Content-type' : 'application/json'},
               body : JSON.stringify(formData), 

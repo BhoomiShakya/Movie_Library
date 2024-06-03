@@ -16,7 +16,7 @@ function Dialog({ movie, onClose }) {
 
     const fetchPlaylists = async () => {
         try {
-            const res = await fetch('http://localhost:8080/playlist/get');
+            const res = await fetch('https://movie-library-backend2.onrender.com/playlist/get');
             if (res.ok) {
                 const data = await res.json();
                 AddInExistingPlayList(data.data); 
@@ -46,7 +46,7 @@ function Dialog({ movie, onClose }) {
             title: listName,
         };
         try {
-            const res = await fetch('http://localhost:8080/playlist/create', {
+            const res = await fetch('https://movie-library-backend2.onrender.com/playlist/create', {
                 method: 'POST',
                 headers: { 
                     'Content-type': 'application/json',
@@ -72,7 +72,7 @@ function Dialog({ movie, onClose }) {
             const playlist = existingg.find(pl => pl._id === selectedlist);
             console.log('Adding to existing playlist:', playlist, 'with movie:', movie);
             const data = movie;
-            const res = await fetch(`http://localhost:8080/playlist/update/${selectedlist}`, {
+            const res = await fetch(`https://movie-library-backend2.onrender.com/playlist/update/${selectedlist}`, {
                 method: 'PUT',
                 headers: { 'Content-type': 'application/json' },
                 body: JSON.stringify(data),

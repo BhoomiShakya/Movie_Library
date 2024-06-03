@@ -23,7 +23,7 @@ const Navbar = ({ setUserIsLoggedIn }) => {
 
     const fetchUser = async (email) => {
         try {
-            const res = await fetch(`http://localhost:8080/user/${email}`, {
+            const res = await fetch(`https://movie-library-backend2.onrender.com/user/${email}`, {
                 method: 'GET',
                 headers: { 'Content-type': 'application/json' },
             });

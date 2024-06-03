@@ -14,7 +14,7 @@ function HomePage({ setMovies , setUserIsLoggedIn, userIsLoggedIn}) {
 
     const fetchPlaylists = async () => {
         try {
-            const res = await fetch('http://localhost:8080/playlist/get');
+            const res = await fetch('https://movie-library-backend2.onrender.com/playlist/get');
             if (res.ok) {
                 const data = await res.json();
                 setPlaylist(data.data); // Update existingPlaylists state with fetched data
