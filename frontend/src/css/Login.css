@@ -46,7 +46,7 @@ input {
 .loginbtn {
     width: 100%;
     padding: 0.5rem;
-    background-color:rgb(128, 0, 128); /* Change this color to your desired color */
+    background-color:rgb(128, 0, 128); 
     color: white;
     border: 2px solid black;
     cursor: pointer;
@@ -55,5 +55,5 @@ input {
 }
 
 .loginbtn:hover {
-    background-color: rgb(179, 0, 179); /* Change this color to your desired color on hover */
+    background-color: rgb(179, 0, 179); 
 }

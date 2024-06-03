@@ -17,7 +17,7 @@
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.8);
-    margin: auto; /* Center the form horizontally */
+    margin: auto; 
     margin-top: 7rem;
 }
 

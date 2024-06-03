@@ -10,7 +10,6 @@
 }
 
 .lowbg{
-    /* height: 100vh; */
     background-image: url('../images/image.jpg');
     background-size: cover; /* Ensures the background image covers the entire viewport */
     background-position: center; /* Centers the background image */
