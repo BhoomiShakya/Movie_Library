@@ -3,19 +3,17 @@ const User = require('../models/User');
 const generateAuthToken = require('../utils/jwtTokenGenerator');
 const SignUp = async (req, res) => {
     try {
-        let Userr = req.body;
-
-        let existingUser = await User.findOne({ email: Userr.email });
+        let user = req.body;
+        let existingUser = await User.findOne({ email: user.email });
         if (existingUser) {
             return res.status(400).json({ message: "Email already exist" });
         }
-
-        Userr.password = await bcrypt.hash(Userr.password, 10); // 10 specifies the salt rounds
+        user.password = await bcrypt.hash(user.password, 10); // 10 specifies the salt rounds
 
         let newUser = new User({
-            name: Userr.name,
-            email: Userr.email,
-            password: Userr.password
+            name: user.name,
+            email: user.email,
+            password: user.password
         });
 
         await newUser.save();
@@ -30,20 +28,20 @@ const SignUp = async (req, res) => {
 // Login
 const Login = async (req, res) => {
     try {
-        let UserrFormData = req.body;
-        let UserrDbInfo = await User.findOne({ email: UserrFormData.email });
-        if (!UserrDbInfo) {
+        let userFormData = req.body;
+        let userDbInfo = await User.findOne({ email: userFormData.email });
+        if (!userDbInfo) {
             return res.status(404).json({ message: "User not found! Sign Up Please" });
         }
 
-        let isPasswordValid = await bcrypt.compare(UserrFormData.password, UserrDbInfo.password);
+        let isPasswordValid = await bcrypt.compare(userFormData.password, userDbInfo.password);
         if (!isPasswordValid) {
             console.log("User password is incorrect")
             return res.status(401).json({ message: "Incorrect password" });
         }
 
         // JWT
-        const token = generateAuthToken(UserrDbInfo);
+        const token = generateAuthToken(userDbInfo);
         return res.status(200).json({ token });
 
     } catch (error) {
@@ -54,11 +52,11 @@ const Login = async (req, res) => {
 const getUser = async (req, res) => {
     const { email } = req.params;
     try {
-        const Userr = await User.findOne({ email });
-        if (!Userr) {
+        const user = await User.findOne({ email });
+        if (!user) {
             return res.status(404).json({ message: 'User not found' });
         }
-        res.json(Userr);
+        res.json(user);
     } catch (error) {
         console.error('Error fetching Userr:', error);
         res.status(500).json({ message: 'Internal server error' });

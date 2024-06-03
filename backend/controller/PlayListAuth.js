@@ -68,12 +68,9 @@ const Create = async (req, res) => {
 
 // Remove
 const Delete = async (req, res) => {
-    console.log("in delete route")
     const playlistId = req.params.id;
-    console.log(playlistId);
     try {
         const playlist = await Playlist.findByIdAndDelete(playlistId);
-
         if (!playlist) {
             return res.status(404).json({ message: 'Playlist not found' });
         }
@@ -107,7 +104,6 @@ const DeleteMovieById = async (req, res) => {
         if (!playlist) {
             return res.status(404).json({ message: 'Playlist not found' });
         }
-
         // Remove the movie with the given imdbID from the playlist
         playlist.movies = playlist.movies.filter(movieId => movieId !== imdbID);
 

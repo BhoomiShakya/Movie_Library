@@ -1,19 +1,19 @@
 const jwt = require('jsonwebtoken');
 
 const validateUser = (req, res, next) => {
-    const tkn = req.header('Authorization')?.replace('Bearer ', '');
-    if (tkn === null || tkn === undefined) { // Check for null or undefined
+    const token = req.header('Authorization')?.replace('Bearer ', '');
+    if (token === null || token === undefined) { // Check for null or undefined
         return res.status(401).json({ message: 'Unauthorized user. No token provided.' });
     }
 
     try {
-        const decoding = jwt.verify(tkn, "HELLO");
-        console.log("Decoded Token:", decoding); 
+        const decoded = jwt.verify(token, "CAT");
+        console.log("Decoded Token:", decoded); 
         // Log the decoded token
-        req.user = decoding.user;
+        req.user = decoded.user;
         next();
     } catch (error) {
-        console.error("Error decoding token:", error);
+        console.error("Error decoded token:", error);
         res.status(400).json({ message: 'Unauthorized user. token is invalid.' });
     }
 };
