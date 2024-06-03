@@ -60,7 +60,7 @@ const ShowPlaylist = ({ playlists, setPlaylist}) => {
                 console.error('Error deleting movie:', error);
             }
         };    
-
+        
     //implementing show and hide playlist feature 
     const togglePlaylistVisibility = async (playlistId) => {
         if (visiblePlaylistId === playlistId) {
@@ -93,20 +93,22 @@ const ShowPlaylist = ({ playlists, setPlaylist}) => {
         }
     };
 
+
+
     return (
         <div className="playlist-container">
-            <p className='heading_playlist'>TRENDING PLAYLISTS</p>
+            <p className='headdshow'>TRENDING PLAYLISTS</p>
             {playlists.map((playlist) => (
                 <div key={playlist._id} className="playlist">
-                    <div className="playlist_name">
-                        <h3 className='playList_title'>{playlist.title}</h3>
-                        <div className="icondelete">
+                    <div className="playlist-header">
+                        <h3 className='head033'>{playlist.title}</h3>
+                        <div className="icon-group">
                             <FaTrash className="trash-icon" onClick={() => deletePlaylist(playlist._id)} />
                         </div>
                     </div>
                     
-                    <button onClick={() => togglePlaylistVisibility(playlist._id)} className='tog_btn'>
-                        {visiblePlaylistId === playlist._id ? 'Hide Playlist' : 'View Playlist'}
+                    <button onClick={() => togglePlaylistVisibility(playlist._id)} className='togglebtn'>
+                        {visiblePlaylistId === playlist._id ? 'Hide Playlist' : 'Show Playlist'}
                     </button>
                     <hr/>
                     {visiblePlaylistId === playlist._id && (
@@ -115,15 +117,13 @@ const ShowPlaylist = ({ playlists, setPlaylist}) => {
                                 <p>This playlist is empty</p>
                             ) : (
                                 playlist.movies.map((imdbID, index) => (
-                                    <div key={index} className="movie" >
+                                    <div key={index} className="movie wrapper" >
                                         {movieDetails[imdbID] ? (
-                                            <div className="movie_item">
-                                                <img src={movieDetails[imdbID].Poster} 
-                                                     alt={movieDetails[imdbID].Title} 
-                                                />
+                                            <div className="movie-card box">
+                                                <img src={movieDetails[imdbID].Poster} alt={movieDetails[imdbID].Title} />
                                                 <p>{movieDetails[imdbID].Title}</p>
                                                 <p>{movieDetails[imdbID].Year}</p>
-                                                <button className="delete_btn" onClick={() => deleteMovie(playlist._id, imdbID)}>Delete</button>
+                                                <button className="dell" onClick={() => deleteMovie(playlist._id, imdbID)}>Delete</button>
                                             </div>
                                         ) : (
                                             <p style={{color:'purple'}}>Loading....</p>
