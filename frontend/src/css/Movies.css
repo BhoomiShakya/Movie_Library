@@ -1,0 +1,68 @@
+.heroo{
+    height: 100%;
+    background-image: url('../images/image.jpg');
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background image fixed when scrolling */
+    margin-bottom: -1rem;
+
+}
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /*  */
+    justify-content: center;
+}
+
+.movie-details {
+    margin-top: 2rem;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Distributes space between elements */
+}
+
+
+.movie-details:hover {
+    transform: scale(1.05);
+  }
+
+.posterdiv {
+    height: 300px;
+    width: 100%;
+    display: flex; /* To center the image inside the div */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+.movie-details img {
+    max-width: 100%;
+    max-height: 100%; /* Ensures the image does not overflow */
+    border-radius: 4px;
+}
+
+.add-button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-button:hover {
+    background-color: rgb(179, 0, 179);
+}

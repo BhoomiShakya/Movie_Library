@@ -1,0 +1,53 @@
+
+.bgg {
+    height: 99vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image: url('../images/image.jpg');
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background image fixed when scrolling */
+}
+
+.form2 {
+    max-width: 300px;
+    padding: 3rem;
+    padding-top: 2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: auto; /* Center the form horizontally */
+    margin-top: 7rem;
+}
+
+.form2 div {
+    margin-bottom: 1rem;
+}
+
+.form2 label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form2 input {
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background-color: rgb(230, 230, 230);
+    color: black;
+}
+
+.form2btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(128, 0, 128);
+    color: white;
+    border: 2px solid black;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.form2btn:hover {
+    background-color: rgb(179, 0, 179);
+}

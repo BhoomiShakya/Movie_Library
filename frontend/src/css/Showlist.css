@@ -1,0 +1,93 @@
+.playlist-container {
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-top: -2rem;
+  padding-bottom: 3rem;
+  margin-bottom: -1rem;
+}
+
+.playlist {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  /* background-color: rgb(255, 255, 255); */
+  /* background: linear-gradient(white, purple,black rgb(179, 0, 179), white ); */
+  /* background: linear-gradient(47deg, white, white, rgb(128, 0, 128), white, white); */
+  background-color: rgb(230, 230, 230);
+  padding: 16px;
+  /* margin-bottom: 20px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.headdshow{
+  color: white;
+  font-size: 2rem;
+  padding-top: 6rem;
+  font-weight:bold;
+  letter-spacing: 1px;
+}
+
+.playlist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-group {
+  display: flex;
+  gap: 10px;
+}
+
+.trash-icon {
+  cursor: pointer;
+  color: purple;
+}
+
+/* .movie {
+  margin-bottom: 10px;
+} */
+
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  width: 60%;
+}
+
+.movie-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+h3 {
+  color: #333;
+}
+
+.dell {
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  background-color: purple;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.dell:hover {
+  background-color:rgb(179, 0, 179);
+}
+
+.togglebtn{
+  padding: 0.5rem;
+  background-color: purple;
+  color: white;
+}

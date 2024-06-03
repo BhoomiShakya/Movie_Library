@@ -1,0 +1,20 @@
+.hero{
+    height:85vh;
+    background-image: url('../images/imagebgg.png');
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background image fixed when scrolling */
+    margin-bottom:-1rem; /* Remove bottom margin */
+
+}
+
+.lowbg{
+    /* height: 100vh; */
+    background-image: url('../images/image.jpg');
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the background image fixed when scrolling */
+    margin-top: 0; /* Remove top margin */
+}
