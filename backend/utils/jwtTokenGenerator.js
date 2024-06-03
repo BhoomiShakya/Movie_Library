@@ -3,7 +3,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 //data is payload
 const generateAuthToken=function(data){  // data == userDbInfo
-     const token=jwt.sign({user:data},process.env.JWT_secret) //CAT is the unique key
+     const token=jwt.sign({user:data},process.env.JWT_SECRET) //CAT is the unique key
      return token;
 }
 
