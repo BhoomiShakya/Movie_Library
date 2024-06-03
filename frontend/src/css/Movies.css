@@ -1,4 +1,4 @@
-.heroo{
+.heroo_section{
     height: 100%;
     background-image: url('../images/image.jpg');
     background-size: cover; /* Ensures the background image covers the entire viewport */
@@ -8,15 +8,14 @@
     margin-bottom: -1rem;
 
 }
-.movie-list {
+.movie_result_list {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    /*  */
     justify-content: center;
 }
 
-.movie-details {
+.details_list {
     margin-top: 2rem;
     background-color: white;
     border: 1px solid #ccc;
@@ -32,25 +31,24 @@
     justify-content: space-between;
 }
 
-
-.movie-details:hover {
+.details_list:hover {
     transform: scale(1.05);
   }
 
-.posterdiv {
+
+.details_list img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 4px;
+}
+
+.poster_container {
     height: 300px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.movie-details img {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 4px;
-}
-
 .add-button {
     margin-top: 10px;
     width: 100%;

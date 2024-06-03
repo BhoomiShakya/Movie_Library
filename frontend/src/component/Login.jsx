@@ -16,8 +16,6 @@ const Login = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        // console.log('Form Data:', formData);
-        // const mail=formData.email;
     try{
         const res = await fetch('https://movie-library-backend2.onrender.com/user/login' , { // Added proxy in the vite.config.js to get the exact url
             method : 'POST' ,
@@ -26,9 +24,7 @@ const Login = () => {
           });
 
         const data = await res.json(); 
-        // console.log(data);
         if(res.ok){
-            // console.log("token-->", data.token);
             localStorage.setItem('token', data.token);
             localStorage.setItem('userEmail',formData.email);
             navigate('/');
@@ -72,7 +68,11 @@ const Login = () => {
                     required
                 />
             </div>
-            <button type="submit" className='loginbtn'>Login</button>
+            <button 
+                type="submit" 
+                className='loginbtn'>
+                    Login
+            </button>
             <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
         </form>
         </div>

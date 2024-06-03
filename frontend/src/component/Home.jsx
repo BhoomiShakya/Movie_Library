@@ -6,8 +6,6 @@ import '../css/Home.css'
 
 function HomePage({ setMovies , setUserIsLoggedIn, userIsLoggedIn}) {
     const [playlist, setPlaylist] = useState([]);
-    // const [userIsLoggedIn, setUserIsLoggedIn] = useState(localStorage.getItem('token') !== null);
-
     useEffect(() => {
         setUserIsLoggedIn(localStorage.getItem('token') !== null);
     }, []);
@@ -17,7 +15,8 @@ function HomePage({ setMovies , setUserIsLoggedIn, userIsLoggedIn}) {
             const res = await fetch('https://movie-library-backend2.onrender.com/playlist/get');
             if (res.ok) {
                 const data = await res.json();
-                setPlaylist(data.data); // Update existingPlaylists state with fetched data
+                setPlaylist(data.data); 
+                // Update existingPlaylists state with fetched data
             } else {
                 throw new Error('Failed to fetch playlists');
             }
