@@ -16,7 +16,7 @@ app.use('/user', AuthRoute);
 app.use('/playlist', PlayList);
 
 
-let PORT=8080;
-app.listen(8080,()=>{
+const port = process.env.PORT || 8080;
+app.listen(port,()=>{
     console.log(`server connected at port at ${PORT}`)
 })
