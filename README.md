@@ -3,7 +3,7 @@
 **Mighty Movies Library**
 Explore and manage your favorite movies with Mighty Movie! Our user-friendly platform lets you create an account, search for movies, and organize them into personalized playlists. Here's how to get started:
 
-#Key Features:
+**#Key Features:**
 
 **1.Navbar Navigation:** 
 Easily access the site with our intuitive navigation bar that includes a logo, the app name (Mighty Movie), and links to Login and Sign Up.
@@ -30,13 +30,19 @@ Users can view a list of their created playlists at the bottom of the main page.
 Within a playlist, users can delete individual movies or remove the entire playlist as desired.
 
 
-**How to Use Mighty Movie:**
+**#How to Use Mighty Movie:**
+
 
 **Sign Up:** Register for a new account via the Sign Up link in the navbar.
+
 **Log In:** Access your account using the Login link in the navbar.
+
 **Search Movies:** Utilize the search bar on the homepage to find movies. Results will appear as detailed movie cards.
+
 **Add to Playlist:** Logged-in users can add movies to their playlists directly from the movie cards. Select an existing playlist from the dropdown or create a new one.
+
 **View Playlists:** Scroll to the bottom of the main page to see your created playlists. Click Show Playlist to view all movies in a specific playlist.
+
 **Manage Playlists:** From within a playlist, delete movies individually or remove the entire playlist as needed.
 
 **Enjoy curating your movie collection with Mighty Movie, and happy viewing!**
