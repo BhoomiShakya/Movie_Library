@@ -9,7 +9,6 @@ function Movies({ movies , setUserIsLoggedIn}) {
     const [selectedMovie, setSelectedMovie] = useState(null);
 
     const handleAddClick = (movie) => {
-        
         setSelectedMovie(movie);
         setIsDialogOpen(true);
     };

@@ -5,6 +5,7 @@ import Signup from './component/Signup';
 import Home from './component/Home';
 import Movies from './component/Movies';
 import { useState } from 'react';
+import Carousel_movie from './component/Carousel_movie';
 
 function App() {
   const [movies, setMovies]= useState([])
@@ -17,6 +18,7 @@ function App() {
           <Route path='/login' exact element={<Login />}></Route>
           <Route path='/Signup' exact element={<Signup/>}></Route>
           <Route path="/movies" exact element={<Movies movies={movies} setUserIsLoggedIn={setUserIsLoggedIn}/>} ></Route>
+          <Route path='/slider' exact element={<Carousel_movie/>}></Route>
         </Routes>
       </BrowserRouter>
     </>

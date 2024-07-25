@@ -1,19 +1,44 @@
 .hero{
     height:85vh;
     background-image: url('../images/imagebgg.png');
-    background-size: cover; /* Ensures the background image covers the entire viewport */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Keeps the background image fixed when scrolling */
-    margin-bottom:-1rem; /* Remove bottom margin */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    margin-bottom:-1rem;
 
 }
 
 .lowbg{
     background-image: url('../images/image.jpg');
-    background-size: cover; /* Ensures the background image covers the entire viewport */
-    background-position: center; /* Centers the background image */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-attachment: fixed; /* Keeps the background image fixed when scrolling */
-    margin-top: 0; /* Remove top margin */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 0; 
 }
+
+.carousell {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    /* max-width: 100%; */
+    /* margin-left: 30rem;
+    margin-right: 30rem;
+    margin-bottom: -7rem; */
+    margin: auto;
+    text-align: center;
+    margin-top: 10rem;
+
+}
+
+/* .lowbg {
+    background-color: #222222;
+    padding: 20px;
+    color: white;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 1000px;
+    border-radius: 10px;
+}
+ */

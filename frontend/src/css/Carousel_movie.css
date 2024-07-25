@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.marquee {
+    overflow: hidden; /* Hide overflow */
+    width: 100%;
+}
+
+.marquee-inner {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    padding: 12vh 0;
+    will-change: transform;
+    animation: marquee 50s linear infinite; /* Apply animation */
+    padding-bottom:8rem;
+}
+
+.marquee-inner img {
+    height: 100%;
+    transition: transform 0.5s, box-shadow 0.5s; /* Add transition for box-shadow */
+    flex-shrink: 0;
+    width: 20vw; /* Maintain image width */
+    border-radius: 2rem;
+}
+
+.marquee-inner img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add grey shadow */
+}
+
+.headdshow01 {
+    color: black;
+    font-size: 2rem;
+    text-align: left;
+    padding-top: 6rem;
+    padding-left: 20rem;
+    font-weight: bold;
+    margin-top: -6rem;
+    letter-spacing: 1px;
+}
+
+/* Keyframe animation for scrolling */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
