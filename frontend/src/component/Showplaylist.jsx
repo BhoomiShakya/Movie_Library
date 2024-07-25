@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { FaTrash } from 'react-icons/fa';
+import { FaTrash, FaShareAlt } from 'react-icons/fa'; // Import the share icon
 import '../css/Showlist.css';
 
-const ShowPlaylist = ({ playlists, setPlaylist}) => {
+const ShowPlaylist = ({ playlists, setPlaylist }) => {
     const [visiblePlaylistId, setVisiblePlaylistId] = useState(null);
     const [movieDetails, setMovieDetails] = useState({});
 
-    //Private APIKEY
     const apikeyy = process.env.REACT_APP_API_KEY;
 
-    //fetching movies from API
+    // Fetching movies from API
     const fetchMovieDetails = async (imdbID) => {
         try {
             const response = await fetch(`https://www.omdbapi.com/?i=${imdbID}&apikey=${apikeyy}`);
@@ -20,8 +19,8 @@ const ShowPlaylist = ({ playlists, setPlaylist}) => {
             return null;
         }
     };
-    
-    //Delete the PlayList using delete icon
+
+    // Delete the Playlist using delete icon
     const deletePlaylist = async (playlistId) => {
         try {
             const response = await fetch(`https://movie-library-backend2.onrender.com/playlist/${playlistId}`, {
@@ -38,30 +37,29 @@ const ShowPlaylist = ({ playlists, setPlaylist}) => {
         }
     };
 
-        //Deleteing the specific movie from the playList
-        const deleteMovie = async (playlistId, imdbID) => {
-            try {
-                const response = await fetch(`https://movie-library-backend2.onrender.com/playlist/${playlistId}/movies/${imdbID}`, {
-                    method: 'DELETE',
-                });
-    
-                if (response.ok) {
-                    setPlaylist(playlists.map(playlist => {
-                        if (playlist._id === playlistId) {
-                            return { ...playlist, movies: playlist.movies.filter(movieId => movieId !== imdbID) };
-                        }
-                        return playlist;
-                    }));
-                    console.log(`Deleted movie with id: ${imdbID} from playlist with id: ${playlistId}`);
-                }  else {
-                    console.error('Failed to delete movie');
-                }
-            } catch (error) {
-                console.error('Error deleting movie:', error);
+    // Delete the specific movie from the playlist
+    const deleteMovie = async (playlistId, imdbID) => {
+        try {
+            const response = await fetch(`https://movie-library-backend2.onrender.com/playlist/${playlistId}/movies/${imdbID}`, {
+                method: 'DELETE',
+            });
+
+            if (response.ok) {
+                setPlaylist(playlists.map(playlist => {
+                    if (playlist._id === playlistId) {
+                        return { ...playlist, movies: playlist.movies.filter(movieId => movieId !== imdbID) };
+                    }
+                    return playlist;
+                }));
+            } else {
+                console.error('Failed to delete movie');
             }
-        };    
-        
-    //implementing show and hide playlist feature 
+        } catch (error) {
+            console.error('Error deleting movie:', error);
+        }
+    };
+
+    // Implementing show and hide playlist feature
     const togglePlaylistVisibility = async (playlistId) => {
         if (visiblePlaylistId === playlistId) {
             setVisiblePlaylistId(null);
@@ -93,7 +91,17 @@ const ShowPlaylist = ({ playlists, setPlaylist}) => {
         }
     };
 
+    // Handle Share Playlist Click
+    const handleShareClick = (playlistId) => {
+        const playlistUrl = `${window.location.origin}/playlist/${playlistId}`;
+        navigator.clipboard.writeText(playlistUrl).then(() => {
+            alert('Playlist link copied to clipboard!');
+        }).catch(err => {
+            console.error('Failed to copy link:', err);
+        });
+    };
 
+    
 
     return (
         <div className="playlist-container">
@@ -104,6 +112,7 @@ const ShowPlaylist = ({ playlists, setPlaylist}) => {
                         <h3 className='head033'>{playlist.title}</h3>
                         <div className="icon-group">
                             <FaTrash className="trash-icon" onClick={() => deletePlaylist(playlist._id)} />
+                            <FaShareAlt className="share-icon" onClick={() => handleShareClick(playlist._id)} />
                         </div>
                     </div>
                     
@@ -117,7 +126,7 @@ const ShowPlaylist = ({ playlists, setPlaylist}) => {
                                 <p>This playlist is empty</p>
                             ) : (
                                 playlist.movies.map((imdbID, index) => (
-                                    <div key={index} className="movie wrapper" >
+                                    <div key={index} className="movie wrapper">
                                         {movieDetails[imdbID] ? (
                                             <div className="movie-card box">
                                                 <img src={movieDetails[imdbID].Poster} alt={movieDetails[imdbID].Title} />
